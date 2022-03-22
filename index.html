@@ -2,20 +2,36 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title >CKEditor 5 – Classic editor V3</title>
+    <title >CKEditor 5 – Classic editor</title>
     <script src="https://cdn.ckeditor.com/ckeditor5/33.0.0/classic/ckeditor.js"></script>
 </head>
 <body>
     <h1>Classic editor</h1>
     <div id="editor">
-        <textarea></textarea>
+        <textarea id="myForm">Escreva Algo</textarea>
     </div>
     <script>
+        
+        let YourEditor;
         ClassicEditor
-            .create( document.querySelector( '#editor' ) )
-            .catch( error => {
-                console.error( error );
-            } );
+        .create(document.querySelector('#myForm'))
+        .then(editor => {
+            window.editor = editor;
+            YourEditor = editor;
+        });
+        function clean() {
+        YourEditor.setData('');
+        };
+        
+        function save(){
+        YourEditor.getData();
+        alert()
+        }
+    
     </script>
+    
+    <button type="button" onclick="clean()">Resetar</button>
+    <button type="button" onclick="save()">Mostrar</button>
+
 </body>
 </html>
