@@ -1,37 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title >CKEditor 5 – Classic editor</title>
-    <script src="https://cdn.ckeditor.com/ckeditor5/33.0.0/classic/ckeditor.js"></script>
-</head>
-<body>
-    <h1>Classic editor</h1>
-    <div id="editor">
-        <textarea id="myForm">Escreva Algo</textarea>
-    </div>
-    <script>
-        
-        let YourEditor;
-        ClassicEditor
-        .create(document.querySelector('#myForm'))
-        .then(editor => {
-            window.editor = editor;
-            YourEditor = editor;
-        });
-        function clean() {
-        YourEditor.setData('');
-        };
-        
-        function save(){
-        YourEditor.getData();
-        alert()
-        }
-    
-    </script>
-    
-    <button type="button" onclick="clean()">Resetar</button>
-    <button type="button" onclick="save()">Mostrar</button>
 
-</body>
+<html lang="PT-br">
+
+    <head>
+        <meta charset="utf-8">
+        <title >Minhas anotações</title>
+        <script src="https://cdn.ckeditor.com/ckeditor5/33.0.0/classic/ckeditor.js"></script>
+        <script src="main.js"></script>
+    </head>
+
+    <body onload="init()">
+
+        <h1>Minhas anotações</h1>
+
+        <div id="containerEditorMinhasAnotacoes"></div>
+    
+        <button type="button" onclick="clean()">Resetar</button>
+        <button type="button" onclick="save()">Salvar</button>
+
+    </body>
+
 </html>
